@@ -1,0 +1,52 @@
+<!-- Features Jobs -->
+<div class="section gray margin-top-45 padding-top-65 padding-bottom-75">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          
+          <!-- Section Headline -->
+          <div class="section-headline margin-top-0 margin-bottom-35">
+            <h3>Featured Jobs</h3>
+            <a href="" class="headline-link">Browse All Jobs</a>
+          </div>
+          
+          <!-- Jobs Container -->
+          <div class="listings-container compact-list-layout margin-top-35" *ngIf="featured_jobs">
+              <!-- Job Listing -->
+              <a href="{{job.link}}" class="job-listing with-apply-button" *ngFor="let job of featured_jobs">
+    
+                <!-- Job Listing Details -->
+                <div class="job-listing-details">
+    
+                  <!-- Logo -->
+                  <div class="job-listing-company-logo">
+                    <img [src]="job.company_logo" alt="">
+                  </div>
+    
+                  <!-- Details -->
+                  <div class="job-listing-description">
+                    <h3 class="job-listing-title">{{ job.listing_title }}</h3>
+    
+                    <!-- Job Listing Footer -->
+                    <div class="job-listing-footer">
+                      <ul>
+                        <li><i class="icon-material-outline-business"></i> {{ job.business }} <div class="verified-badge" title="Verified Employer" data-tippy-placement="top"></div></li>
+                        <li><i class="icon-material-outline-location-on"></i> {{ job.location }}</li>
+                        <li><i class="icon-material-outline-business-center"></i> {{ job.business_center }}</li>
+                        <li><i class="icon-material-outline-access-time"></i> {{ job.access_day }} days ago</li>
+                      </ul>
+                    </div>
+                  </div>
+    
+                  <!-- Apply Button -->
+                  <span class="list-apply-button ripple-effect">Apply Now</span>
+                </div>
+              </a>	
+          </div>
+          <!-- Jobs Container / End -->
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Featured Jobs / End -->

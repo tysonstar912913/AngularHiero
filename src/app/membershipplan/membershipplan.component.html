@@ -1,0 +1,47 @@
+<!-- Membership Plans -->
+<div class="section padding-top-60 padding-bottom-75">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <!-- Section Headline -->
+          <div class="section-headline centered margin-top-0 margin-bottom-35">
+            <h3>Membership Plans</h3>
+          </div>
+        </div>
+        <div class="col-xl-12">
+          <!-- Billing Cycle  -->
+          <div class="billing-cycle-radios margin-bottom-70">
+            <div class="radio billed-monthly-radio">
+              <input id="radio-5" name="radio-payment-type" type="radio" checked>
+              <label for="radio-5"><span class="radio-label"></span> Billed Monthly</label>
+            </div>
+            <div class="radio billed-yearly-radio">
+              <input id="radio-6" name="radio-payment-type" type="radio">
+              <label for="radio-6"><span class="radio-label"></span> Billed Yearly <span class="small-label">Save 10%</span></label>
+            </div>
+          </div>
+          <!-- Pricing Plans Container -->
+          <div class="pricing-plans-container" *ngIf="membershipdata">
+            <!-- Plan -->
+            <div class="pricing-plan" [ngClass]="{'recommended' : plan_item.is_recommended}" *ngFor="let plan_item of membershipdata">
+              <div class="recommended-badge" *ngIf="plan_item.is_recommended == true">Recommended</div>
+              <h3>{{plan_item.plan_name}}</h3>
+              <p class="margin-top-10">{{plan_item.description}}</p>
+              <div class="pricing-plan-label billed-monthly-label"><strong>{{plan_item.price_monthly}}</strong>/ monthly</div>
+              <div class="pricing-plan-label billed-yearly-label"><strong>{{plan_item.price_yearly}}</strong>/ yearly</div>
+              <div class="pricing-plan-features">
+                <strong>Features of {{plan_item.plan_name}}</strong>
+                <ul>
+                  <li>{{plan_item.feature_listing}} Listing</li>
+                  <li>{{plan_item.feature_day_visibility}} Days Visibility</li>
+                  <li>{{plan_item.feature_searchresult}}</li>
+                </ul>
+              </div>
+              <a href="{{plan_item.buy_link}}" class="button full-width margin-top-20 billed-monthly-label">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Membership Plans / End-->

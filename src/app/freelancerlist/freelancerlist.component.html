@@ -1,0 +1,57 @@
+<!-- Highest Rated Freelancers -->
+<div class="section gray padding-top-65 padding-bottom-70 full-width-carousel-fix">
+    <div class="container">
+      <div class="row">
+  
+        <div class="col-xl-12">
+          <!-- Section Headline -->
+          <div class="section-headline margin-top-0 margin-bottom-25">
+            <h3>Highest Rated Freelancers</h3>
+            <a href="/" class="headline-link">Browse All Freelancers</a>
+          </div>
+        </div>
+  
+        <div class="col-xl-12">
+          <div class="default-slick-carousel freelancers-container freelancers-grid-layout" *ngIf="freelancers">
+            <!--Freelancer -->
+            <div class="freelancer" *ngFor="let freelancer of freelancers">
+              <!-- Overview -->
+              <div class="freelancer-overview">
+                <div class="freelancer-overview-inner">
+                  <!-- Bookmark Icon -->
+                  <span class="bookmark-icon" [ngClass]="{'bookmarked' : freelancer.is_bookmark}"></span>
+                  <!-- Avatar -->
+                  <div class="freelancer-avatar">
+                    <div class="verified-badge"></div>
+                    <a href="{{freelancer.link}}"><img src="{{freelancer.avatar_img}}" alt=""></a>
+                  </div>
+                  <!-- Name -->
+                  <div class="freelancer-name">
+                    <h4><a href="{{freelancer.link}}">{{freelancer.freelancer_name}} <img class="flag" src="{{freelancer.flag_img}}" alt="" title="{{freelancer.country}}" data-tippy-placement="top"></a></h4>
+                    <span>{{freelancer.skill}}</span>
+                  </div>
+                  <!-- Rating -->
+                  <div class="freelancer-rating">
+                    <div class="star-rating" [attr.data-rating]="freelancer.rating"></div>
+                  </div>
+                </div>
+              </div>						
+              <!-- Details -->
+              <div class="freelancer-details">
+                <div class="freelancer-details-list">
+                  <ul>
+                    <li>Location <strong><i class="icon-material-outline-location-on"></i> {{freelancer.detail_location}}</strong></li>
+                    <li>Rate <strong>{{freelancer.detail_rate}}</strong></li>
+                    <li>Job Success <strong>{{freelancer.detail_job_success}}%</strong></li>
+                  </ul>
+                </div>
+                <a href="{{freelancer.link}}" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+              </div>
+            </div>
+            <!-- Freelancer / End -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Highest Rated Freelancers / End-->

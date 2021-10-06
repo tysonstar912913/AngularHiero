@@ -1,0 +1,29 @@
+<!-- Content
+================================================== -->
+<!-- Category Boxes -->
+<div class="section margin-top-65">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="section-headline centered margin-bottom-15">
+            <h3>Popular Job Categories</h3>
+          </div>
+          <!-- Category Boxes Container -->
+          <div class="categories-container" *ngIf="job_categories">
+            <!-- Category Box -->
+            <a href="#" class="category-box" *ngFor="let category of job_categories">
+              <div class="category-box-icon">
+                <i class="{{category.category_icon}}"></i>
+              </div>
+              <div class="category-box-counter">{{category.category_box_count}}</div>
+              <div class="category-box-content">
+                <h3>{{category.category_name}}</h3>
+                <p>{{category.description}}</p>
+              </div>
+            </a>          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Category Boxes / End -->
